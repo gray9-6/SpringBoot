@@ -41,6 +41,9 @@ public class BootstrapData implements CommandLineRunner {
         // now save book to authors, so that , the book we added to author can also be saved in db
         ajaySavedAuthor.getBooks().add(javaSavedBook);
         abhaySavedAuthor.getBooks().add(pythonSavedBook);
+        // also add authors to book
+        javaSavedBook.getAuthors().add(ajaySavedAuthor);
+        pythonSavedBook.getAuthors().add(abhaySavedAuthor);
 
         Publisher publisher = new Publisher();
         publisher.setPublisherName("Ruby");
